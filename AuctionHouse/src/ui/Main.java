@@ -12,6 +12,7 @@ public class Main {
     private static Auctioneer auctioneer;
     private static Bidder b1, b2, b3, b4, b5, b6;
     private static ArrayList<Bidder> bidders;
+    private static double input;
 
     public static void main(String[] args) {
         boolean itemSold = false;
@@ -19,7 +20,8 @@ public class Main {
         populateAuctionHouse();
 
         System.out.print("Bidding starts at $1.00, enter your initial bid: ");
-        auctioneer.acceptBid(userInput.nextDouble());
+        input = userInput.nextDouble();
+        auctioneer.acceptBid(input);
         displayHighestBid();
 
         while (!itemSold) {
@@ -28,7 +30,8 @@ public class Main {
 
             if (userResponse.equalsIgnoreCase("y")) {
                 System.out.print("Enter your new bid: ");
-                auctioneer.acceptBid(userInput.nextDouble());
+                input = userInput.nextDouble();
+                auctioneer.acceptBid(input);
                 displayHighestBid();
             } else {
                 System.out.println("Item has been sold at: $" + gethighestBid());
@@ -36,6 +39,7 @@ public class Main {
             }
         }
     }
+
 
     private static void populateAuctionHouse() {
         auctioneer = new Auctioneer("John Smith");
@@ -65,7 +69,7 @@ public class Main {
     }
 
     private static void displayHighestBid() {
-        System.out.println("The current highest bid is at: " + gethighestBid());
+        System.out.println("The current highest bid is at: $" + gethighestBid());
     }
 
     private static double gethighestBid() {
@@ -75,12 +79,12 @@ public class Main {
                 max = b.getPersonalBid();
             }
         }
+        if (input > max) {
+            max = input;
+        }
         if (max == 0) {
             return auctioneer.getCurrentBid();
-        } else {
-            return max;
         }
+        return max;
     }
-
-
 }

@@ -1,30 +1,34 @@
 package model;
 
-import observers.Observer;
-
-import javax.security.auth.Subject;
-
 public class Auctioneer extends Subject {
 
     String name;
-    Double currentBid;
+    double currentBid;
 
-    public String getName(){
+    public Auctioneer(String name) {
+        this.name = name;
+        currentBid = 0.0;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public Double getCurrentBid(){
+    public double getCurrentBid() {
         return currentBid;
     }
 
-    public void acceptBid(double currentBid){}
-
-    public void notifyObservers(Double newBidAmt){}
-
-    @Override
-    public void update(Subject subj, Object obj) {
-
+    public void acceptBid(double bid) {
+        if (bid <= currentBid) {
+            System.out.println("That bid isn't larger than the current bid!");
+        } else{
+            currentBid = bid;
+        notifyObservers(currentBid);}
     }
 
+    public void notifyObservers(double newBidAmt) {
+        super.notifyObservers(this, newBidAmt);
     }
+
 }
+

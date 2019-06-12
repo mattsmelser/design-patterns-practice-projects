@@ -1,6 +1,4 @@
-package observers;
-
-import javax.security.auth.Subject;
+package model;
 
 public interface Observer {
     void update(Subject subj, Object obj);
