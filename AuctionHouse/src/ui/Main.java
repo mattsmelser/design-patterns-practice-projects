@@ -45,16 +45,16 @@ public class Main {
         auctioneer = new Auctioneer("John Smith");
         b1 = new Bidder("Anthony Estey", 100.00);
         b2 = new Bidder("Ian Cavers", 55.00);
-        b3 = new Bidder("Elisa Baniassad", 65.00);
-        b4 = new Bidder("James Yoo", 5.00);
-        b5 = new Bidder("Amy Zhu", 5.50);
-        b6 = new Bidder("James Xiao", 8.49);
+//        b3 = new Bidder("Elisa Baniassad", 65.00);
+//        b4 = new Bidder("James Yoo", 5.00);
+//        b5 = new Bidder("Amy Zhu", 5.50);
+//        b6 = new Bidder("James Xiao", 8.49);
         auctioneer.addObserver(b1);
         auctioneer.addObserver(b2);
-        auctioneer.addObserver(b3);
-        auctioneer.addObserver(b4);
-        auctioneer.addObserver(b5);
-        auctioneer.addObserver(b6);
+//        auctioneer.addObserver(b3);
+//        auctioneer.addObserver(b4);
+//        auctioneer.addObserver(b5);
+//        auctioneer.addObserver(b6);
         addBiddersToList();
     }
 
@@ -62,10 +62,10 @@ public class Main {
         bidders = new ArrayList<>();
         bidders.add(b1);
         bidders.add(b2);
-        bidders.add(b3);
-        bidders.add(b4);
-        bidders.add(b5);
-        bidders.add(b6);
+//        bidders.add(b3);
+//        bidders.add(b4);
+//        bidders.add(b5);
+//        bidders.add(b6);
     }
 
     private static void displayHighestBid() {
