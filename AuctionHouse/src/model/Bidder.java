@@ -34,16 +34,28 @@ public class Bidder implements Observer {
         return maxBid;
     }
 
+//    @Override
+//    public void update(Subject auctioneer, Object arg) {
+//        if (currentBid < (double)arg){currentBid = (double)arg;}
+//        if (currentBid >= getMaxBid()){
+//            System.out.println(name + " can't bid any higher!");
+//        }
+//        else makeBid(currentBid);
+//        auctioneer.acceptBid(getPersonalBid());
+//    }
+
     @Override
     public void update(Subject auctioneer, Object arg) {
-        //currentBid = (double)arg;
+        Auctioneer theAuctioneer = (Auctioneer) auctioneer;
         if (currentBid < (double)arg){currentBid = (double)arg;}
-        //System.out.println(name + " has been updated with bid of " + currentBid);
         if (currentBid >= getMaxBid()){
             System.out.println(name + " can't bid any higher!");
         }
         else makeBid(currentBid);
-    }
+            theAuctioneer.acceptBid(getPersonalBid());
+        }
+
+
 
     public double makeBid(double currentBid){
         Random rand = new Random();
@@ -51,8 +63,9 @@ public class Bidder implements Observer {
         if (personalBid >= maxBid){personalBid = maxBid; }
         //currentBid = personalBid;
         System.out.println(name + "'s bid is : $" + personalBid);
-        return getCurrentBid();
+        return currentBid;
     }
+
 
 
 }

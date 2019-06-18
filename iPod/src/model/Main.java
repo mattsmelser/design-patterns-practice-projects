@@ -8,10 +8,14 @@ public class Main {
 
     private static iPod nano = new iPod("John");
     private static Movie m1 = new Movie("Dunkirk (2017)", "Christopher Nolan", "Drama",  107);
+    private static Movie m2 = new Movie("Dunkirk (2017)", "Christopher Nolan", "Drama",  107);
+    private static Movie m3 = new Movie("Dunkirk (2017)", "Christopher Nolan", "Drama",  107);
     private static Song s1 = new Song("Writing's on the Wall", "Sam Smith", "Ballad", 3.02);
+    private static Song s2 = new Song("Writing's on the Wall", "Sam Smith", "Ballad", 3.02);
+    private static Song s3 = new Song("Writing's on the Wall", "Sam Smith", "Ballad", 3.02);
     private static Photo p1 = new Photo("Moonrise", "Ansel Adams", "Landscape", "Yosemite");
-
-    // TODO: add more examples of media files you might find on an iPod below
+    private static Photo p2 = new Photo("Moonrise", "Ansel Adams", "Landscape", "Yosemite");
+    private static Photo p3 = new Photo("Moonrise", "Ansel Adams", "Landscape", "Yosemite");
 
     public static void main(String[] args) {
 
